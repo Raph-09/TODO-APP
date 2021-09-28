@@ -1,0 +1,21 @@
+{% extends 'base.html'%} {% block head %}
+
+<title>Home</title>
+{% endblock%} {% block body %}
+<h2>TASK MASTER</h2>
+<form action="/" method="POST">
+  <label for="todo_text">Task</label>
+  <input
+    class="form-control"
+    type="text"
+    name="todo_text"
+    id="todo_text"
+    value="{{todo.todo_text}}"
+    placeholder="Enter Todo"
+    aria-label="Enter Todo"
+  />
+  <br />
+
+  <input class="btn btn-success" type="submit" value="Save" />
+</form>
+{% endblock%}

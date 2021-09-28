@@ -1,0 +1,25 @@
+{% extends 'base.html'%} {% block head %}
+
+<title>Home</title>
+{% endblock%} {% block body %}
+<h2>TASK MASTER</h2>
+<form action="/" method="POST">
+  <label for="todo_text">Task</label>
+  <input
+    class="form-control"
+    type="text"
+    name="todo_text"
+    id="todo_text"
+    placeholder="Enter Todo"
+    aria-label="Enter Todo"
+  />
+  <br />
+
+  <input class="btn btn-success" type="submit" value="Add Task" />
+</form>
+{%for todo in todos%}
+<br />
+<h2>Todo:{{todo.todo_text}}</h2>
+<a class="btn btn-danger" href="/delete/{{todo.id}}">Delete</a>
+<a class="btn btn-primary" href="/edit/{{todo.id}}">Edit</a>
+{%endfor%} {% endblock%}
